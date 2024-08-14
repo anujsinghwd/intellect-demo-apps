@@ -1,0 +1,98 @@
+.time-slot-picker {
+    font-family: Arial, sans-serif;
+    max-width: 400px;
+    margin: 20px auto;
+    background-color: #f9f5ed;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.date-picker {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.nav-button {
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.date-list {
+    display: flex;
+    overflow-x: auto;
+    scrollbar-width: none;
+    /* Hide scrollbar in Firefox */
+    -ms-overflow-style: none;
+    /* Hide scrollbar in IE and Edge */
+}
+
+.date-list::-webkit-scrollbar {
+    display: none;
+    /* Hide scrollbar in Chrome, Safari and Opera */
+}
+
+.date-item {
+    background-color: #ffffff;
+    border-radius: 8px;
+    margin: 0 5px;
+    padding: 10px 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    flex-shrink: 0;
+}
+
+.date-item.selected {
+    background-color: #d4e3ff;
+}
+
+.date-item .day {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.date-item .weekDay {
+    font-size: 14px;
+    color: #666;
+}
+
+.time-slot-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.time-slot-item {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px 15px;
+    margin: 5px 0;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    flex: 1 1 30%;
+}
+
+.time-slot-item.selected {
+    background-color: #d4e3ff;
+    border-color: #007bff;
+}
+
+.session-duration {
+    color: #999;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+h3,
+h4 {
+    color: #333;
+    font-weight: normal;
+}
