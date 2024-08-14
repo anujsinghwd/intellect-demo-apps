@@ -1,70 +1,100 @@
-# Getting Started with Create React App
+# Frontend Developer Assignment - ReactJS Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This ReactJS application is a frontend developer assignment that includes two interactive widgets: an Emoji Scale Widget and a Date & Time Slot Picker. The application is responsive and works across various devices, including mobile phones, tablets, and desktops.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Getting Started](#getting-started)
+- [Project Structure](#project-structure)
+- [Components Description](#components-description)
+  - [EmojiScaleWidget](#emojiscalewidget)
+  - [TimeSlotPicker](#timeslotpicker)
+- [Routing and Navigation](#routing-and-navigation)
+- [Styling](#styling)
+- [Running the Application](#running-the-application)
+- [Screenshots](#screenshots)
+- [License](#license)
 
-### `npm start`
+## Getting Started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+These instructions will help you set up and run the project on your local machine for development and testing purposes.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Prerequisites
 
-### `npm test`
+- [Node.js](https://nodejs.org/) (v14 or higher)
+- [npm](https://www.npmjs.com/) (v6 or higher)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Installation
 
-### `npm run build`
+1. **Clone the repository:**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    ```bash
+    git clone <repository-url>
+    ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. **Navigate to the project directory:**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    ```bash
+    cd <project-directory>
+    ```
 
-### `npm run eject`
+3. **Install dependencies:**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+    ```bash
+    npm install
+    ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. **Run the application:**
+    ```bash
+    npm start
+    ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+    This will start the development server and open the application in your default web browser at `http://localhost:3000`.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Project Structure
 
-## Learn More
+The project is structured as follows:
+```
+src/
+│
+├── components/
+│   ├── EmojiScaleWidget.js        # Component for Emoji Scale Widget
+│   ├── TimeSlotPicker.js          # Component for Date & Time Slot Picker
+│
+├── pages/
+│   ├── HomePage.js                # Homepage with descriptions and links to widgets
+│   ├── EmojiScalePage.js          # Page to display Emoji Scale Widget
+│   └── TimeSlotPage.js            # Page to display Date & Time Slot Picker
+│
+├── App.js                          # Main App component with routing
+├── index.js                        # Entry point for the React application
+└── styles/
+   ├── EmojiScaleWidget.css        # Styles specific to Emoji Scale Widget
+   └── TimeSlotPicker.css          # Styles specific to Date & Time Slot Picker
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Components Description
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### EmojiScaleWidget
 
-### Code Splitting
+- **Purpose**: This component allows users to select an emoji on a scale, representing a range of emotions or ratings.
+- **Features**:
+ - Fully responsive design.
+ - Interactive emoji selection with visual feedback.
+- **Location**: `src/components/EmojiScaleWidget.js`
+- **Styling**: The styles for this component are located in `src/styles/EmojiScaleWidget.css`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### TimeSlotPicker
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **Purpose**: This component allows users to pick a date and select a time slot for a 30-minute session.
+- **Features**:
+ - Date picker with scrollable navigation for available dates.
+ - Interactive time slot selection with visual feedback.
+ - Responsive design across all devices.
+- **Location**: `src/components/TimeSlotPicker.js`
+- **Styling**: The styles for this component are located in `src/styles/TimeSlotPicker.css`.
+## Routing and Navigation
+The application uses `react-router-dom` for routing between different pages:
+- **Homepage (`/`)**: Displays descriptions and links to both widgets.
+- **Emoji Scale Widget (`/emoji-scale`)**: Renders the Emoji Scale Widget component.
+- **Time Slot Picker (`/time-slot-picker`)**: Renders the Date & Time Slot Picker component.
