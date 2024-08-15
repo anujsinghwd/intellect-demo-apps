@@ -5,6 +5,8 @@ import HomePage from "./Pages/HomePage";
 import FeedbackPage from "./Pages/Feedback";
 import TimeSlotPage from "./Pages/SlotPicker";
 
+import './App.css';
+
 const App = () => {
   return (
     <Router>

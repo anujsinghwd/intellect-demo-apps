@@ -9,13 +9,13 @@ const HomePage = () => {
       <p>Select one of the tasks below to view the corresponding widget:</p>
 
       <div style={styles.taskContainer}>
-        <h2>Task 1: Emoji Scale Widget</h2>
+        <h2>Task 1: Wellbeing Widget</h2>
         <p>
           This widget allows users to select an emoji on a scale. It is fully
           responsive across mobile, desktop, and tablet devices.
         </p>
         <Link to="/feedback" style={styles.linkButton}>
-          View Feedback Widget
+          Wellbeing Widget
         </Link>
       </div>
 

@@ -56,7 +56,7 @@
     font-weight: bold;
 }
 
-.date-item .weekDay {
+.date-item .dayName {
     font-size: 14px;
     color: #666;
 }
@@ -69,20 +69,22 @@
 }
 
 .time-slot-item {
+    max-width: 90px;
     background-color: #ffffff;
     border: 1px solid #ccc;
     border-radius: 8px;
-    padding: 10px 15px;
-    margin: 5px 0;
+    padding: 15px 15px;
+    margin: 10px 0;
     cursor: pointer;
     text-align: center;
     transition: background-color 0.3s ease;
     flex: 1 1 30%;
 }
 
-.time-slot-item.selected {
+.time-slot-item.selected-time {
     background-color: #d4e3ff;
     border-color: #007bff;
+    color: #007bff;
 }
 
 .session-duration {

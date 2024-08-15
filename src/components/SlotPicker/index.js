@@ -1,24 +1,11 @@
 import React, { useRef, useState } from "react";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import data from "../../data/slots.json";
 import "./slot.css";
-const dates = [
-  { day: "02", weekDay: "Fri" },
-  { day: "05", weekDay: "Mon" },
-  { day: "16", weekDay: "Fri" },
-  { day: "19", weekDay: "Mon" },
-  { day: "22", weekDay: "Fri" },
-  { day: "25", weekDay: "Mon" },
-  { day: "28", weekDay: "Thu" },
-];
-const timeSlots = [
-  "07:30AM",
-  "08:00AM",
-  "08:30AM",
-  "09:00AM",
-  "09:30AM",
-  "10:00AM",
-];
+
 const TimeSlotPicker = () => {
-  const [selectedDate, setSelectedDate] = useState(dates[2]);
+  const [selectedDate, setSelectedDate] = useState(data[0].date);
+  const [timeSlots, setTimeSlots] = useState(data[0].slots);
   const [selectedTimeSlot, setSelectedTimeSlot] = useState(null);
   const dateListRef = useRef(null);
   const handleNextClick = () => {
@@ -31,47 +18,61 @@ const TimeSlotPicker = () => {
       dateListRef.current.scrollBy({ left: -100, behavior: "smooth" });
     }
   };
+
+  const handleSelectedDate = (slot) => {
+    setSelectedDate(slot.date);
+    setTimeSlots(slot.slots);
+    setSelectedTimeSlot(null);
+  };
+
   return (
-    <div className="time-slot-picker">
-      <h3>Pick a date</h3>
-      <div className="date-picker">
-        <button className="nav-button" onClick={handlePrevClick}>
-          &lt;
-        </button>
-        <div className="date-list" ref={dateListRef}>
-          {dates.map((date, index) => (
+    <>
+      <div className="time-slot-picker">
+        <h3>Pick a date</h3>
+        <div className="date-picker">
+          <button className="nav-button" onClick={handlePrevClick} aria-label="left arrow">
+            <FaArrowLeft />
+          </button>
+          <div className="date-list" ref={dateListRef}>
+            {data.map((slot, index) => (
+              <div
+                key={index}
+                className={`date-item ${
+                  selectedDate.day === slot.date.day ? "selected" : ""
+                }`}
+                onClick={() => handleSelectedDate(slot)}
+              >
+                <div className="day">{slot.date.day}</div>
+                <div className="dayName">{slot.date.name}</div>
+              </div>
+            ))}
+          </div>
+          <button className="nav-button" onClick={handleNextClick} aria-label="right arrow">
+            <FaArrowRight />
+          </button>
+        </div>
+        <h4>Available time slots</h4>
+        <p className="session-duration">Each session lasts for 30 minutes</p>
+        <div className="time-slot-list">
+          {timeSlots.map((slot, index) => (
             <div
               key={index}
-              className={`date-item ${
-                selectedDate.day === date.day ? "selected" : ""
+              className={`time-slot-item ${
+                selectedTimeSlot === slot ? "selected-time" : ""
               }`}
-              onClick={() => setSelectedDate(date)}
+              onClick={() => setSelectedTimeSlot(slot)}
             >
-              <div className="day">{date.day}</div>
-              <div className="weekDay">{date.weekDay}</div>
+              {slot}
             </div>
           ))}
         </div>
-        <button className="nav-button" onClick={handleNextClick}>
-          &gt;
-        </button>
       </div>
-      <h4>Available time slots</h4>
-      <p className="session-duration">Each session lasts for 30 minutes</p>
-      <div className="time-slot-list">
-        {timeSlots.map((slot, index) => (
-          <div
-            key={index}
-            className={`time-slot-item ${
-              selectedTimeSlot === slot ? "selected" : ""
-            }`}
-            onClick={() => setSelectedTimeSlot(slot)}
-          >
-            {slot}
-          </div>
-        ))}
+      <div className="text-center">
+        {selectedDate &&
+          selectedTimeSlot &&
+          (<h3>{`You selected: ${selectedDate.day} at ${selectedTimeSlot}`}</h3>)}
       </div>
-    </div>
+    </>
   );
 };
 export default TimeSlotPicker;
