@@ -33,8 +33,8 @@ To get started with the project, follow these steps:
 1. **Clone the repository:**
 
     ```bash
-    git clone <repository-url>
-    cd <repository-directory>
+    git clone https://github.com/anujsinghwd/intellect-demo-apps.git
+    cd intellect-demo-apps
     ```
 
 2. **Install dependencies:**
@@ -205,5 +205,3 @@ npm test
 
 - **Updates the selected time slot and displays the selection**:
   - Verifies that selecting a time slot updates the state and displays the selected time slot and date correctly.
-
-This `README.md` provides a comprehensive overview of the project, including installation instructions, high-level design, usage details, component descriptions, and testing instructions. Adjust the `<repository-url>` and `<repository-directory>` placeholders as needed for your specific project.
