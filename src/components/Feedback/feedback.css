@@ -10,7 +10,11 @@
 
 .emoji-scale {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    flex-wrap: wrap;
+    /* Allows items to wrap on smaller screens */
+    gap: 10px;
+    /* Adds space between items */
     margin: 20px 0;
 }
 
@@ -75,7 +79,10 @@
     color: #fff;
     border-radius: 5px;
     text-decoration: none;
-    transition: "background-color 0.3s ease";
-    width: 70%;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    /* Make button full width on small screens */
+    max-width: 600px;
+    /* Set a max-width for larger screens */
     cursor: pointer;
 }
