@@ -24,12 +24,15 @@ const WellbeingWidget = () => {
         <h2>Select Your Mood</h2>
         <div className="emoji-scale">
           {emojiData.map((emoji, index) => (
-            <div className="emoji-container" key={emoji.name}>
+            <div
+              className="emoji-container"
+              key={emoji.name}
+              onClick={() => handleEmojiClick(index)}
+            >
               <div
                 className={`emoji-item ${
                   selectedEmoji === index ? "selected" : ""
                 }`}
-                onClick={() => handleEmojiClick(index)}
               >
                 {emoji.emoji}
               </div>
